@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Internet store or smth</title>
+   <link rel="stylesheet" type="text/css" th:href="@{/styles.css}" />
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body class="bg">
+   <th:block th:include="_header"></th:block>
+   <th:block th:include="_menu"></th:block>
+   <div class="any-container"><h3>Internet shop presentation : it ain't pretty but it works</h3>
+
+   </div>
+
+   <div class="any-container">
+      <h3>What can you do?</h3>
+      <ul>
+         <li>1. As a customer/Without loggin' in : add products to your shopping cart (choose quantity etc) -> continue shopping or complete your purchase by entering your information.  </li>
+         <li> </li>
+         <li>2. As an employee : see list of orders, see your account information.</li>
+         <li> </li>
+         <li>3. As a manager : add/update/delete products, see list of orders, see your account information.</li>
+         <li> </li>
+         <li>**Click 'Login' to see Username&Password for manager/employee and login form**</li>
+      </ul>
+   </div>
+
+   <th:block th:include="_footer"></th:block>
+
+</body>
+
+</html>

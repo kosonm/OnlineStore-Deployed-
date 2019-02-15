@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - KosonmApplication",
+            "request": "launch",
+            "mainClass": "com.eshop.kosonm.KosonmApplication",
+            "projectName": "kosonm"
+        }
+    ]
+}

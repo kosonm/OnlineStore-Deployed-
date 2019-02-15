@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>Account Info</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+   </head>
+   <body class="bg">
+    
+      <th:block th:include="_header"></th:block>
+      <th:block th:include="_menu"></th:block>
+       
+      <div class="any-container">
+         Account Info</div>
+      <div class="account-container">
+         <ul>
+            <li>User Name: <span th:utext="${#request.userPrincipal.name}"></span></li>
+            <li>
+               Role:
+               <ul>
+                  <li th:each="auth : ${userDetails.authorities}" th:utext="${auth.authority}"></li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+       
+      <th:block th:include="_footer"></th:block>
+       
+   </body>
+</html>
