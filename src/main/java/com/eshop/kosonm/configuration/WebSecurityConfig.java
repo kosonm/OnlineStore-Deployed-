@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
       http.csrf().disable();
       /*
-      To acess these pages you need to be logged in and have a employee/manager role
+      To access these pages you need to be logged in and have a employee/manager role
       or else it'll redirect you to /admin/login
       */
       http.authorizeRequests().antMatchers("/admin/orderList", "/admin/order", "/admin/accountInfo")//

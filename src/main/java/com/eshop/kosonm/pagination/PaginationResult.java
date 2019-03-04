@@ -9,6 +9,7 @@ import org.hibernate.query.Query;
 
 import lombok.Data;
 
+
 @Data
 public class PaginationResult<E> {
 
@@ -66,16 +67,12 @@ public class PaginationResult<E> {
 
       this.maxNavigationPage = maxNavigationPage;
 
-      if (maxNavigationPage < totalPages) {
-         this.maxNavigationPage = maxNavigationPage;
-      }
-
       this.calcNavigationPages();
    }
 
    private void calcNavigationPages() {
 
-      this.navigationPages = new ArrayList<Integer>();
+      this.navigationPages = new ArrayList<>();
 
       int current = this.currentPage > this.totalPages ? this.totalPages : this.currentPage;
 

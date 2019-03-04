@@ -1,4 +1,4 @@
-package com.eshop.kosonm.controller;
+package com.eshop.kosonm.product.controller;
 
 import java.io.IOException;
 

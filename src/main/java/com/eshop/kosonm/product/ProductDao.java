@@ -36,7 +36,7 @@ public class ProductDao {
             Session session = this.entityManager.unwrap(Session.class);
             Query<Product> query = session.createQuery(sql, Product.class);
             query.setParameter("code", code);
-            return (Product) query.getSingleResult();
+            return query.getSingleResult();
         } catch (NoResultException e) {
             return null;
         }
@@ -50,7 +50,7 @@ public class ProductDao {
         return new ProductInfo(product.getCode(), product.getName(), product.getPrice());
     }
 
-    // if theres an error then nothing changes in db
+    // if there's an error then nothing changes in db
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void save(ProductForm productForm) {
 
@@ -105,7 +105,7 @@ public class ProductDao {
         if (StringUtils.isNotEmpty(likeName)) {
             query.setParameter("likeName", "%" + likeName.toLowerCase() + "%");
         }
-        return new PaginationResult<ProductInfo>(query, page, maxResult, maxNavigationPage);
+        return new PaginationResult<>(query, page, maxResult, maxNavigationPage);
     }
 
     public PaginationResult<ProductInfo> queryProducts(int page, int maxResult, int maxNavigationPage) {

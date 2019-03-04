@@ -9,17 +9,19 @@ public class OrderDetailInfo {
     private String productCode;
     private String productName;
  
-    private int quanity;
+    private int quantity;
     private double price;
     private double amount;
 
+    public OrderDetailInfo(){}
+
    //for jpa & hibernate
-    public OrderDetailInfo(String id, String productCode, 
-            String productName, int quanity, double price, double amount) {
+    public OrderDetailInfo(String id, String productCode,
+                           String productName, int quantity, double price, double amount) {
         this.id = id;
         this.productCode = productCode;
         this.productName = productName;
-        this.quanity = quanity;
+        this.quantity = quantity;
         this.price = price;
         this.amount = amount;
 }

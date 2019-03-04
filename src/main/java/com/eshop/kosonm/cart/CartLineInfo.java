@@ -9,6 +9,10 @@ public class CartLineInfo {
   
     private ProductInfo productInfo;
     private int quantity;
+
+    public String getProductCode(){
+        return productInfo.getCode();
+    }
   
     public CartLineInfo() {
         this.quantity = 0;
@@ -17,5 +21,5 @@ public class CartLineInfo {
     public double getAmount() {
         return this.productInfo.getPrice() * this.quantity;
     }
-     
+
 }

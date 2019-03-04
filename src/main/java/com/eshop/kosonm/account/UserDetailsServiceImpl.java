@@ -1,11 +1,5 @@
 package com.eshop.kosonm.account;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.eshop.kosonm.account.AccountDao;
-import com.eshop.kosonm.account.Account;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -37,7 +34,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         // EMPLOYEE,MANAGER
         String role = account.getUserRole();
 
-        List<GrantedAuthority> grantList = new ArrayList<GrantedAuthority>();
+        List<GrantedAuthority> grantList = new ArrayList<>();
 
         // ROLE_EMPLOYEE, ROLE_MANAGER
         GrantedAuthority authority = new SimpleGrantedAuthority(role);
@@ -49,7 +46,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         boolean credentialsNonExpired = true;
         boolean accountNonLocked = true;
 
-        UserDetails userDetails = (UserDetails) new User(account.getUserName(), account.getEncrytedPassword(), enabled,
+        UserDetails userDetails = new User(account.getUserName(), account.getEncryptedPassword(), enabled,
                 accountNonExpired, credentialsNonExpired, accountNonLocked, grantList);
 
         return userDetails;

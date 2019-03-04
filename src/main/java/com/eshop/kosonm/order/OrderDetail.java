@@ -20,8 +20,7 @@ import javax.persistence.Id;
 @Table(name = "order_details")
 @Data // using Lombok library to eliminate 'boilerplate' code (getters&setters etc)
 public class OrderDetail implements Serializable {
- 
- 
+
     private static final long serialVersionUID = 6155204466272437279L;
 
     @Id
@@ -36,8 +35,8 @@ public class OrderDetail implements Serializable {
     @JoinColumn(name = "product_id", nullable = false, foreignKey = @ForeignKey(name = "order_detail_prod_fk"))
     private Product product;
  
-    @Column(name = "quanity", nullable = false)
-    private int quanity;
+    @Column(name = "quantity", nullable = false)
+    private int quantity;
  
     @Column(name = "price", nullable = false)
     private double price;

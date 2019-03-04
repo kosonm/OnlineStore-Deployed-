@@ -37,7 +37,7 @@ public class OrderDao {
         String sql = "Select max(o.orderNum) from " + Order.class.getName() + " o ";
         Session session = this.entityManager.unwrap(Session.class);
         Query<Integer> query = session.createQuery(sql, Integer.class);
-        Integer value = (Integer) query.getSingleResult();
+        Integer value = query.getSingleResult();
         if (value == null) {
             return 0;
         }
@@ -72,7 +72,7 @@ public class OrderDao {
             detail.setOrder(order);
             detail.setAmount(line.getAmount());
             detail.setPrice(line.getProductInfo().getPrice());
-            detail.setQuanity(line.getQuantity());
+           // detail.setQuantity(line.getQuantity());
 
             String code = line.getProductInfo().getCode();
             Product product = this.productDao.findProduct(code);
@@ -92,7 +92,7 @@ public class OrderDao {
 
         Session session = this.entityManager.unwrap(Session.class);
         Query<OrderInfo> query = session.createQuery(sql, OrderInfo.class);
-        return new PaginationResult<OrderInfo>(query, page, maxResult, maxNavigationPage);
+        return new PaginationResult<>(query, page, maxResult, maxNavigationPage);
     }
 
     public Order findOrder(String orderId) {
@@ -112,7 +112,7 @@ public class OrderDao {
 
     public List<OrderDetailInfo> listOrderDetailInfos(String orderId) {
         String sql = "Select new " + OrderDetailInfo.class.getName()
-                + "(d.id, d.product.code, d.product.name , d.quanity,d.price,d.amount) " + " from "
+                + "(d.id, d.product.code, d.product.name , d.quantity,d.price,d.amount) " + " from "
                 + OrderDetail.class.getName() + " d " + " where d.order.id = :orderId ";
 
         Session session = this.entityManager.unwrap(Session.class);

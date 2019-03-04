@@ -4,7 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
- 
+
+
 @Data // using Lombok library to eliminate 'boilerplate' code (getters&setters etc)
 public class OrderInfo {
  

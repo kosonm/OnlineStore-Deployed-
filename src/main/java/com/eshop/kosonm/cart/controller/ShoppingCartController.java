@@ -1,4 +1,4 @@
-package com.eshop.kosonm.controller;
+package com.eshop.kosonm.cart.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;

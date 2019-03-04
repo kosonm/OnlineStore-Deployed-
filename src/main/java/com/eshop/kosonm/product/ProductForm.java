@@ -6,10 +6,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Data;
 
+
 @Data // using Lombok library to eliminate 'boilerplate' code (getters&setters etc)
 public class ProductForm {
     private String code;
     private String name;
+
     private double price;
  
     private boolean newProduct = false;

@@ -10,8 +10,8 @@ public class ProductInfo {
     private String name;
     private double price;
 
-    public ProductInfo() {
-
+    public ProductInfo(){
+        
     }
 
     public ProductInfo(Product product) {

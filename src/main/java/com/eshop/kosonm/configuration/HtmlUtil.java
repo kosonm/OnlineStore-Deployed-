@@ -6,7 +6,7 @@ public class HtmlUtil {
     /**
      * Verify if a string contains any HTML characters by comparing its
      * HTML-escaped version with the original.
-     * @param String input  the input String
+     * @param //String input  the input String
      * @return boolean  True if the String contains HTML characters
      */
     public static boolean isHtml(String input) {
